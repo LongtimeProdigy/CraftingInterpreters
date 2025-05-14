@@ -33,18 +33,18 @@ static Entry* findEntry(Entry* entries, int capacity, ObjString* key)
 		{
 			if (IS_NIL(entry->value))
 			{
-				//¿£Æ®¸®¸¦ ºñ¿î´Ù
+				//ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				return tombstone != NULL ? tombstone : entry;
 			}
 			else
 			{
-				//Åù½ºÅæÀ» Ã£¾Ò´Ù
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½Ò´ï¿½
 				if (tombstone == NULL) tombstone = entry;
 			}
 		}
 		else if (entry->key == key)
 		{
-			// Å°¸¦ Ã£¾Ò´Ù
+			// Å°ï¿½ï¿½ Ã£ï¿½Ò´ï¿½
 			return entry;
 		}
 
@@ -110,11 +110,11 @@ bool tableDelete(Table* table, ObjString* key)
 {
 	if (table->count == 0) return false;
 
-	//¿£Æ®¸®¸¦ Ã£´Â´Ù
+	//ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½Â´ï¿½
 	Entry* entry = findEntry(table->entries, table->capacity, key);
 	if (entry->key == NULL) return false;
 
-	//¿£Æ®¸®¿¡ Åù½ºÅæÀ» ³Ö´Â´Ù
+	//ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Â´ï¿½
 	entry->key = NULL;
 	entry->value = BOOL_VAL(true);
 	return true;
@@ -142,12 +142,12 @@ ObjString* tableFindString(Table* table, const char* chars, int length, uint32_t
 		Entry* entry = &table->entries[index];
 		if (entry->key == NULL)
 		{
-			//Åù½ºÅæ ¾Æ´Ñ ¿£Æ®¸®°¡ ³ª¿À¸é ¸ØÃá´Ù
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (IS_NIL(entry->value)) return NULL;
 		}
 		else if (entry->key->length == length && entry->key->hash == hash && memcmp(entry->key->chars, chars, length) == 0)
 		{
-			// Ã£¾Ò´Ù
+			// Ã£ï¿½Ò´ï¿½
 			return entry->key;
 		}
 

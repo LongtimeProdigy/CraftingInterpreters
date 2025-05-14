@@ -99,7 +99,7 @@ static void skipWhitespace()
 		case '/':
 			if (peekNext() == '/')
 			{
-				// ÁÖ¼®Àº ÁÙ ³¡±îÁö ÀÌ¾îÁø´Ù
+				// ï¿½Ö¼ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½
 				while (peek() != '\n' && !isAtEnd()) advance();
 			}
 			else
@@ -173,10 +173,10 @@ static Token number()
 {
 	while (isDigit(peek())) advance();
 
-	// ¼Ò¼öºÎ¸¦ ÇÇÅ©ÇÑ´Ù
+	// ï¿½Ò¼ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½Å©ï¿½Ñ´ï¿½
 	if (peek() == '.' && isDigit(peekNext()))
 	{
-		// "."À» ¼ÒºñÇÑ´Ù
+		// "."ï¿½ï¿½ ï¿½Òºï¿½ï¿½Ñ´ï¿½
 		advance();
 		while (isDigit(peek())) advance();
 	}
@@ -194,7 +194,7 @@ static Token string()
 
 	if (isAtEnd()) return errorToken("Unterminated string.");
 
-	// ´Ý´Â Å«µû¿ÈÇ¥
+	// ï¿½Ý´ï¿½ Å«ï¿½ï¿½ï¿½ï¿½Ç¥
 	advance();
 	return makeToken(TOKEN_STRING);
 }

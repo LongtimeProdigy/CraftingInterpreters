@@ -1,0 +1,9 @@
+fun fib(n)
+{
+	print n;
+	return n;
+}
+
+var start = clock();
+print fib(3);
+print clock() - start;
