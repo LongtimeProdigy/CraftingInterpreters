@@ -1,9 +1,21 @@
-fun fib(n)
+fun outer()
 {
-	print n;
-	return n;
+	var x = "outside";
+	fun inner()
+	{
+		var y = "inside";
+		fun innerinner()
+		{
+			var z = "test";
+			print z + " " + x + " " + y;
+		}
+
+		return innerinner;
+	}
+
+	return inner;
 }
 
-var start = clock();
-print fib(3);
-print clock() - start;
+var in = outer();
+var inin = in();
+inin();

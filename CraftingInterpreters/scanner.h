@@ -2,19 +2,19 @@
 
 typedef enum
 {
-	// ´ÜÀÏ ¹®ÀÚ ÅäÅ«
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å«
 	TOKEN_LEFT_PAREN, TOKEN_RIGHT_PAREN, 
 	TOKEN_LEFT_BRACE, TOKEN_RIGHT_BRACE, 
 	TOKEN_COMMA, TOKEN_DOT, TOKEN_MINUS, TOKEN_PLUS, 
 	TOKEN_SEMICOLON, TOKEN_SLASH, TOKEN_STAR, 
-	// ¹®ÀÚ 1°³ ¶Ç´Â 2°³Â¥¸® ÅäÅ«
+	// ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½Ç´ï¿½ 2ï¿½ï¿½Â¥ï¿½ï¿½ ï¿½ï¿½Å«
 	TOKEN_BANG, TOKEN_BANG_EQUAL, 
 	TOKEN_EQUAL, TOKEN_EQUAL_EQUAL, 
 	TOKEN_GREATER, TOKEN_GREATER_EQUAL, 
 	TOKEN_LESS, TOKEN_LESS_EQUAL, 
-	// ¸®ÅÍ·²
+	// ï¿½ï¿½ï¿½Í·ï¿½
 	TOKEN_IDENTIFIER, TOKEN_STRING, TOKEN_NUMBER, 
-	// Å°¿öµå
+	// Å°ï¿½ï¿½ï¿½ï¿½
 	TOKEN_AND, TOKEN_CLASS, TOKEN_ELSE, TOKEN_FALSE, 
 	TOKEN_FOR, TOKEN_FUN, TOKEN_IF, TOKEN_NIL, TOKEN_OR, 
 	TOKEN_PRINT, TOKEN_RETURN, TOKEN_SUPER, TOKEN_THIS, 
