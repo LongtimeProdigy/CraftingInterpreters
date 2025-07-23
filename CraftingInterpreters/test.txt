@@ -1,21 +1,6 @@
-fun outer()
-{
-	var x = "outside";
-	fun inner()
-	{
-		var y = "inside";
-		fun innerinner()
-		{
-			var z = "test";
-			print z + " " + x + " " + y;
-		}
+class Pair{}
 
-		return innerinner;
-	}
-
-	return inner;
-}
-
-var in = outer();
-var inin = in();
-inin();
+var pair = Pair();
+pair.first = 1;
+pair.second = 2;
+print pair.first + pair.second; // 3
